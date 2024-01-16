@@ -44,6 +44,7 @@ export default function SelectDateField({ handleChange }) {
     <div className="mb-4 flex">
       <label htmlFor="month" className="mr-14 block text-lg text-white mb-2">
         Date
+      </label>
         <div className="grid grid-cols-3 gap-3">
           <select
             id="month"
@@ -96,7 +97,6 @@ export default function SelectDateField({ handleChange }) {
             ))}
           </select>
         </div>
-      </label>
     </div>
   );
 }
