@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function SelectDateField({ handleChange }) {
   function generateArray(start, end) {
@@ -31,15 +31,20 @@ export default function SelectDateField({ handleChange }) {
       default:
         break;
     }
-
-    handleChange({
-      target: {
-        id: 'date',
-        value: `${selectedMonth}/${selectedDay}/${selectedYear}`,
-      },
-    });
   };
-
+  
+  useEffect(() => {
+    if (selectedMonth && selectedDay && selectedYear) {
+      const dateString = `${selectedMonth}/${selectedDay}/${selectedYear}`;
+      handleChange({
+        target: {
+          id: 'date',
+          value: dateString,
+        },
+      });
+    }
+  }, [selectedMonth, selectedDay, selectedYear]);
+  
   return (
     <div className="mb-4 flex">
       <label htmlFor="month" className="mr-14 block text-lg text-white mb-2">
