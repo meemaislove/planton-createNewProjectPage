@@ -57,6 +57,7 @@ export default function SelectDateField({ handleChange }) {
             value={selectedMonth}
             onChange={(e) => handleSelectChange('month', e.target.value)}
             className="text-center w-13 h-8 border rounded-lg bg-[#1a1a1a]"
+            required
           >
             <option value="" disabled>
               MM
@@ -74,6 +75,7 @@ export default function SelectDateField({ handleChange }) {
             value={selectedDay}
             onChange={(e) => handleSelectChange('day', e.target.value)}
             className="text-center w-13 h-8 border rounded-lg bg-[#1a1a1a]"
+            required
           >
             <option value="" disabled>
               DD
@@ -91,6 +93,7 @@ export default function SelectDateField({ handleChange }) {
             value={selectedYear}
             onChange={(e) => handleSelectChange('year', e.target.value)}
             className="text-center w-18 h-8 border rounded-lg bg-[#1a1a1a]"
+            required
           >
             <option value="" disabled>
               YYYY

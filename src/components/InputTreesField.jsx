@@ -1,14 +1,14 @@
 import { useState } from "react";
 
 export default function InputTreesField({ handleChange }) {
-    const [treesToPlant, setTreesToPlant] = useState(0);
+    const [treesToPlant, setTreesToPlant] = useState('');
 
     const handleInputChange = (e) => {
     const inputValue = e.target.value;
 
-    // Check if the entered value is a non-negative integer
-    if (/^\d*$/.test(inputValue) && inputValue >= 0) {
-      setTreesToPlant(inputValue, 10);
+    if (inputValue === '' || /^[1-9]\d*$/.test(inputValue)) {
+      const parsedValue = parseInt(inputValue, 10);
+      setTreesToPlant(parsedValue);
       handleChange(e);
     }
   };
